@@ -1,0 +1,36 @@
+.sec3{
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+}
+.sec3-head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.sec3-head h1{
+    width: max-content;
+    font-size: 5rem;
+    font-weight: 400;
+}
+.sec3-head h2{
+    width: 75%;
+    height: 1.5px;
+    background: black;
+}
+.sec3-imgdiv{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.sec3-imgdiv img{
+    width: 20%;
+}
+.sec3-imgdiv img:hover{
+    scale: 1.03;
+    transition: all;
+    cursor: pointer;
+}

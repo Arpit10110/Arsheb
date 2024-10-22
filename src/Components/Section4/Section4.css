@@ -1,0 +1,53 @@
+.Section4{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    align-items: center;
+}
+.Section4 h1{
+    font-size: 4rem;
+    font-weight: 400;
+}
+.section4-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+.sec4-card{
+    width: 22%;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+.sec4-card img {
+    width: 100%;
+}
+.sec4-card h2{
+    text-align: center;
+    padding: 1rem;
+    font-weight: 500;
+    border: 1px solid;
+    font-size: 2rem;
+}
+.sec4-card button{
+    padding: 0.4rem;
+    border: 1px solid;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.sec4-card :nth-child(4){
+    padding: 0.4rem;
+    cursor: pointer;
+    border: 1px solid;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: #FFBF00;
+}
+.sec4-card:hover{
+    scale: 1.04;
+    transition: all;
+}

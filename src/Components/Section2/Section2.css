@@ -1,0 +1,23 @@
+.section2 {
+    background-color: #302C4E;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+.sec2box{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+.sec2box img {
+    width: 65%;
+}
+.sec2box h2{
+    font-weight: 500;
+    font-size: 2rem;
+}

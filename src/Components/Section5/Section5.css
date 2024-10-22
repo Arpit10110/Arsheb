@@ -1,0 +1,24 @@
+.sec5{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.sec5-allprods{
+    padding-top: 8rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.sec5-card{
+    flex-direction: column;
+    width: 18%;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+}
+.sec5-card img{
+    width: 85%;
+}
+.sec5-card h2{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
