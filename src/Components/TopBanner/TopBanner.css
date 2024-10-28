@@ -1,0 +1,41 @@
+.top-banner {
+    background-color: #BEBED9;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3.5rem;
+    align-items: center;
+    height: 25vh;
+    padding: 0rem 2rem 0rem 2rem;
+    position: relative;
+}
+.top-banner h1{
+    font-size: 5rem;
+    font-weight: 400;
+}
+.top-bannerImg{
+    width: 18%;
+    height: inherit;
+}
+.top-bannerImg img {
+    position: absolute;
+    top: -2rem;
+    width: inherit;
+    height: -webkit-fill-available;
+    object-fit: fill;
+}
+
+@media only screen and (width<=1059px) {
+    .top-bannerImg {
+        width: 25%;
+    }
+}
+@media only screen and (width<=850px) {
+    .top-bannerImg {
+        width: 30%;
+    }
+}
+@media only screen and (width<=600px) {
+    .top-bannerImg {
+        width: 45%;
+    }
+}
