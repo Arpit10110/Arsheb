@@ -53,45 +53,33 @@ const Signupbox = () => {
 
   const submithandel = async (e) => {
     e.preventDefault();
-    // try {
-    //   const address = [
-    //     {
-    //       address1: Address1,
-    //       city: City,
-    //       province: State,
-    //       phone: Phone,
-    //       zip: PostalCode,
-    //       first_name: Fname,
-    //       landmark: Landmark,
-    //       country: 'IN'
-    //     }
-    //   ];
+    try {
+      const address = Landmark + "," + Address1 + "," + City+ "," + State+ "," +PostalCode;
+      const { data } = await axios.post(`${import.meta.env.VITE_Port}/signup`, {
+        Fname,
+        Email,
+        Phone,
+        Password,
+        address
+      });
 
-    //   const { data } = await axios.post(`${import.meta.env.VITE_Port}/signup`, {
-    //     Fname,
-    //     Email,
-    //     Phone,
-    //     Password,
-    //     address
-    //   });
-
-    //   if (data.status === false) {
-    //     toast.error(data.message, {
-    //       position: "top-right",
-    //       autoClose: 5000,
-    //       hideProgressBar: false,
-    //       closeOnClick: true,
-    //       pauseOnHover: true,
-    //       draggable: true,
-    //       progress: undefined,
-    //       theme: "colored",
-    //     });
-    //   } else {
-    //     navigate("/successignup");
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
+      if (data.status === false) {
+        toast.error(data.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else {
+        navigate("/successignup");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
