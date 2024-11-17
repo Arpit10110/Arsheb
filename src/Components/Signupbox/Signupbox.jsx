@@ -12,58 +12,19 @@ const Signupbox = () => {
   const [Email, setEmail] = useState('');
   const [Phone, setPhone] = useState('');
   const [Password, setPassword] = useState('');
-  const [Address1, setAddress1] = useState('');
-  const [Landmark, setLandmark] = useState('');
-  const [PostalCode, setPostalCode] = useState('');
-  const [City, setCity] = useState('');
-  const [State, setState] = useState('');
 
-  // Handle Postal Code change
-  const handlePostalCodeChange = async (e) => {
-    const pincode = e.target.value;
-    setPostalCode(pincode);
-
-    // Only fetch data if the postal code is 6 digits (valid for Indian PIN)
-    if (pincode.length === 6) {
-      try {
-        const response = await axios.get(`https://api.postalpincode.in/pincode/${pincode}`);
-        const data = response.data;
-
-        if (data[0].Status === "Success") {
-          const postOffice = data[0].PostOffice[0];
-          setCity(postOffice.District);  // Set the city
-          setState(postOffice.State);    // Set the state
-        } else {
-          toast.error("Invalid Postal Code", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
-        }
-      } catch (error) {
-        console.error("Error fetching postal code data:", error);
-      }
-    }
-  };
 
   const submithandel = async (e) => {
     e.preventDefault();
     try {
-      const address = Landmark + "," + Address1 + "," + City+ "," + State+ "," +PostalCode;
       const { data } = await axios.post(`${import.meta.env.VITE_Port}/signup`, {
         Fname,
         Email,
         Phone,
         Password,
-        address
       });
-
-      if (data.status === false) {
+      console.log(data);
+      if (data.success === false) {
         toast.error(data.message, {
           position: "top-right",
           autoClose: 5000,
@@ -117,53 +78,6 @@ const Signupbox = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
-          <div className="login-div-input">
-            <h3>Address</h3>
-            <input
-              type="text"
-              onChange={(e) => setAddress1(e.target.value)}
-              required
-            />
-          </div>
-          <div className="signup-div-main">
-            <div className="signup-div-input">
-              <h3>Landmark</h3>
-              <input
-                type="text"
-                onChange={(e) => setLandmark(e.target.value)}
-                required
-              />
-            </div>
-            <div className="signup-div-input">
-              <h3>Postal Code</h3>
-              <input
-                type="text"
-                value={PostalCode}
-                onChange={handlePostalCodeChange}
-                required
-              />
-            </div>
-          </div>
-          <div className="signup-div-main">
-            <div className="signup-div-input">
-              <h3>City</h3>
-              <input
-                type="text"
-                value={City}
-                onChange={(e) => setCity(e.target.value)}
-                required
-              />
-            </div>
-            <div className="signup-div-input">
-              <h3>State</h3>
-              <input
-                type="text"
-                value={State}
-                onChange={(e) => setState(e.target.value)}
-                required
-              />
-            </div>
           </div>
           <div className="signup-div-btn">
             <button type="submit">Create Account</button>

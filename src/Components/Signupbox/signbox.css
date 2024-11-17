@@ -20,7 +20,7 @@
 }
 .signup-div-btn{
     display: flex ;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     flex-direction: row ;
     gap: 3rem ;
     align-items: center;
