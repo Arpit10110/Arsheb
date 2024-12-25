@@ -6,36 +6,43 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {useDispatch} from "react-redux"
 const Loginbox = () => {
   const navigate= useNavigate();
+  const dispatch = useDispatch();
   const [Email , setEmail]=useState("");
   const [Password , setPassword]=useState("");
   const submitlogin =async(e)=>{
-    // e.preventDefault();
-    // try {
-    //   const {data} = await axios.post(`${import.meta.env.VITE_Port}/login`,{
-    //     Email : Email,
-    //     Password : Password
-    //   })
-    //   console.log("this is the output",data);
-    //   if(data.status== false){
-    //     toast.error(data.message, {
-    //       position: "top-right",
-    //       autoClose: 5000, 
-    //       hideProgressBar: false,
-    //       closeOnClick: true,
-    //       pauseOnHover: true,
-    //       draggable: true,
-    //       progress: undefined,
-    //       theme: "colored",
-    //       });
-    //   }else{
-    //     navigate("/");
-    //   }
-    // } catch (error) { 
-    //   console.log("this is the output",error);
+    e.preventDefault();
+    try {
+      const {data} = await axios.post(`${import.meta.env.VITE_Port}/login`,{
+        Email : Email,
+        Password : Password
+      })
+      console.log("this is the output",data);
+      if(data.status== false){
+        toast.error(data.message, {
+          position: "top-right",
+          autoClose: 5000, 
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
+      }else{
+        console.log(data.user._id);
+        dispatch({
+          type:"login",
+          id:data.user._id,
+        })
+        navigate("/");
+      }
+    } catch (error) { 
+      console.log("this is the output",error);
 
-    // } 
+    } 
   }
   return (
   <>

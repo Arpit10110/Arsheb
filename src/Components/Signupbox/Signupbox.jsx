@@ -25,7 +25,7 @@ const Signupbox = () => {
       });
       console.log(data);
       if (data.success === false) {
-        toast.error(data.message, {
+        toast.error(data.message, { 
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
