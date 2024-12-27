@@ -42,18 +42,4 @@ export const demoapi = [
         price:600,
         desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quam atque? Sequi, voluptatibus tempora maiores ipsum minus libero quaerat quis!"
     },
-    {
-        id:7,
-        img:img,
-        title:"Ear ring",
-        price:100,
-        desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quam atque? Sequi, voluptatibus tempora maiores ipsum minus libero quaerat quis!"
-    },
-    {
-        id:8,
-        img:img,
-        title:"Ear ring",
-        price:800,
-        desc: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quam atque? Sequi, voluptatibus tempora maiores ipsum minus libero quaerat quis!"
-    },
 ] 

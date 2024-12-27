@@ -4,7 +4,7 @@ import StoreCard from '../Components/StoreCard'
 const StoreJewellery = () => {
   return (
     <>
-        <div className='py-[5rem] flex flex-wrap justify-around gap-y-[2rem] gap-x-[4rem] '>
+        <div className='py-[5rem] flex flex-wrap justify-around gap-[4rem] w-[80%] m-auto'>
             {
                 demoapi.map((i,index)=>{
                     return(
