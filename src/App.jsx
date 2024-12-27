@@ -6,6 +6,7 @@ import Login from "./Pages/Login.jsx"
 import Signup from "./Pages/Signup.jsx"
 import Store from "./Pages/Store.jsx"
 import StoreJewellery from "./Pages/StoreJewellery.jsx"
+import Cart from "./Pages/Cart.jsx"
 //style
 import "./Style/index.css"
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/product' element={<Store/>} >
             <Route path='/product/jewellery' element={<StoreJewellery/>} />
           </Route>
+          <Route path='/cart'   element={<Cart/>} />
         </Routes> 
       </Router>
      

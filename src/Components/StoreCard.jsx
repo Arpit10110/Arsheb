@@ -1,6 +1,6 @@
 import React from 'react'
 
-const StoreCard = ({img,desc,title,price,}) => {
+const StoreCard = ({img,title,price,addtocart,id}) => {
   return (
    <>
     <div className='flex flex-col w-[30%] border-black border-[1px] rounded-[5px] p-[1rem] gap-[1rem] bg-gray-200' >
@@ -13,7 +13,15 @@ const StoreCard = ({img,desc,title,price,}) => {
             </div>
             <div className='flex flex-col gap-[0.5rem] text-[2rem] w-[50%] items-end '>
                 <h2 className='font-semibold  '>₹{price} INR</h2>
-                <button className='w-fit pt-[0.4rem]  px-[1.5rem] text-[1.8rem] bg-[#FFDD55]  rounded-tr-[30px] rounded-bl-[30px] ' >Add to Cart</button>
+                <button onClick={()=>addtocart(
+                    {
+                        id:id,
+                        img:img,
+                        title:title,
+                        price:price,
+                        qty:1,
+                    }
+                )} className='w-fit pt-[0.4rem]  px-[1.5rem] text-[1.8rem] bg-[#FFDD55]  rounded-tr-[30px] rounded-bl-[30px] ' >Add to Cart</button>
             </div>
         </div>
     </div>
