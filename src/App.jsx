@@ -7,6 +7,7 @@ import Signup from "./Pages/Signup.jsx"
 import Store from "./Pages/Store.jsx"
 import StoreJewellery from "./Pages/StoreJewellery.jsx"
 import Cart from "./Pages/Cart.jsx"
+import Chekout from "./Pages/Chekout.jsx"
 //style
 import "./Style/index.css"
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
             <Route path='/product/jewellery' element={<StoreJewellery/>} />
           </Route>
           <Route path='/cart'   element={<Cart/>} />
+          <Route path='/chekout'   element={<Chekout/>} />
         </Routes> 
       </Router>
      
