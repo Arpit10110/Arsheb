@@ -124,7 +124,7 @@
     display: flex;
     justify-content: space-between;
   }
-  .price-summary-main a {
+  .price-summary-main button{
     margin: auto;
     margin-top: 1rem;
     background-color: #147aa9;

@@ -6,7 +6,11 @@ import "../Style/Cart.css"
 import { useSelector,useDispatch } from "react-redux";
 import Footer from "../Components/Footer/Footer";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Cart = () => {
+    const navigate = useNavigate();
   const dispatch= useDispatch()
   const { Cart } = useSelector(state => state.arshebdeatil);
   const {TotalPrice} =  useSelector(state => state.arshebdeatil);
@@ -45,6 +49,24 @@ const Cart = () => {
       type: 'Calculate'
     });
   };
+
+  
+  const chekout = ()=>{
+    if (Cart.length<=0){
+        toast.info("Please add item", {
+            position: "top-right",
+            autoClose: 3000, 
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
+    }else{
+        navigate("/chekout");
+    }
+  }
 
   return (
     <>
@@ -91,13 +113,25 @@ const Cart = () => {
                 <h1>₹{Total}</h1>
                 </div>
                 {
-                User_id== "" ? <Link to="/login">Proceed</Link>: <Link to="/checkout">Proceed to Checkout</Link>
+                User_id== "" ? <Link to="/login">Proceed</Link>: <button onClick={chekout}>Proceed to Checkout</button>
                 }
             </div>
         </div>
 
         </div>
         <Footer/>
+        <ToastContainer
+position="top-right"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
     </>
   );
 };
