@@ -88,8 +88,8 @@ export const arshebreducer = createReducer({
       localStorage.setItem("Arshebcart", JSON.stringify(state.Cart)); // Update localStorage
     });
 
-    builder.addCase(emptycart,(state, action) => {
+    builder.addCase(emptycart,(state) => {
       state.Cart=[];
-      localStorage.setItem("TinyClocart", JSON.stringify(state.Cart));
+      localStorage.setItem("Arshebcart", JSON.stringify(state.Cart));
   })
 });
