@@ -124,6 +124,20 @@
     display: flex;
     justify-content: space-between;
   }
+  .price-summary-main a{
+    margin: auto;
+    margin-top: 1rem;
+    background-color: #147aa9;
+    color: white;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: 8px;
+    padding-right: 2rem;
+    font-size: 1.7rem;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+  }
   .price-summary-main button{
     margin: auto;
     margin-top: 1rem;
