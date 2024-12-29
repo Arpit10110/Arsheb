@@ -10,6 +10,7 @@ import Cart from "./Pages/Cart.jsx"
 import Chekout from "./Pages/Chekout.jsx"
 import Orderplaced from "./Pages/Orderplaced.jsx"
 import Successignup from "./Pages/Successignup.jsx"
+import Contact from "./Pages/Contact.jsx"
 //style
 import "./Style/index.css"
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/chekout'   element={<Chekout/>} />
           <Route path='/orderplaced'   element={<Orderplaced/>} />
           <Route path='/successignup'   element={<Successignup/>} />
+          <Route path='/contact'   element={<Contact/>} />
         </Routes> 
       </Router>
      
