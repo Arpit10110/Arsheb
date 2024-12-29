@@ -5,16 +5,26 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 const Signupbox = () => {
   const navigate = useNavigate();
   const [Fname, setFname] = useState('');
   const [Email, setEmail] = useState('');
   const [Phone, setPhone] = useState('');
   const [Password, setPassword] = useState('');
+  const [open, setOpen] = useState(false);
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
 
   const submithandel = async (e) => {
+    handleOpen();
     e.preventDefault();
     try {
       const { data } = await axios.post(`${import.meta.env.VITE_Port}/signup`, {
@@ -23,7 +33,7 @@ const Signupbox = () => {
         Phone,
         Password,
       });
-      console.log(data);
+      handleClose();
       if (data.success === false) {
         toast.error(data.message, { 
           position: "top-right",
@@ -35,16 +45,23 @@ const Signupbox = () => {
           progress: undefined,
           theme: "colored",
         });
-      } else {
+      } else { 
         navigate("/successignup");
       }
     } catch (error) {
+      handleClose();
       console.error(error);
     }
   };
 
   return (
     <>
+       <Backdrop
+        sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <div className="loginbox-main">
         <form onSubmit={submithandel} className="loginbox">
           <div className="login-div-input">

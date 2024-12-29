@@ -7,19 +7,32 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useDispatch} from "react-redux"
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 const Loginbox = () => {
   const navigate= useNavigate();
   const dispatch = useDispatch();
   const [Email , setEmail]=useState("");
   const [Password , setPassword]=useState("");
+  const [open, setOpen] = useState(false);
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+
   const submitlogin =async(e)=>{
+    handleOpen();
     e.preventDefault();
     try {
       const {data} = await axios.post(`${import.meta.env.VITE_Port}/login`,{
         Email : Email,
         Password : Password
       })
-      console.log("this is the output",data);
+      handleClose();
       if(data.status== false){
         toast.error(data.message, {
           position: "top-right",
@@ -32,7 +45,6 @@ const Loginbox = () => {
           theme: "colored",
           });
       }else{
-        console.log(data.user._id);
         dispatch({
           type:"login",
           id:data.user._id,
@@ -40,6 +52,7 @@ const Loginbox = () => {
         navigate("/");
       }
     } catch (error) { 
+      handleClose();
       console.log("this is the output",error);
 
     } 

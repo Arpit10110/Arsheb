@@ -9,6 +9,7 @@ import StoreJewellery from "./Pages/StoreJewellery.jsx"
 import Cart from "./Pages/Cart.jsx"
 import Chekout from "./Pages/Chekout.jsx"
 import Orderplaced from "./Pages/Orderplaced.jsx"
+import Successignup from "./Pages/Successignup.jsx"
 //style
 import "./Style/index.css"
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/cart'   element={<Cart/>} />
           <Route path='/chekout'   element={<Chekout/>} />
           <Route path='/orderplaced'   element={<Orderplaced/>} />
+          <Route path='/successignup'   element={<Successignup/>} />
         </Routes> 
       </Router>
      
