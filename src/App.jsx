@@ -11,6 +11,7 @@ import Chekout from "./Pages/Chekout.jsx"
 import Orderplaced from "./Pages/Orderplaced.jsx"
 import Successignup from "./Pages/Successignup.jsx"
 import Contact from "./Pages/Contact.jsx"
+import Profile from "./Pages/Profile.jsx"
 //style
 import "./Style/index.css"
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/orderplaced'   element={<Orderplaced/>} />
           <Route path='/successignup'   element={<Successignup/>} />
           <Route path='/contact'   element={<Contact/>} />
+          <Route path='/profile'   element={<Profile/>} />
         </Routes> 
       </Router>
      

@@ -154,7 +154,7 @@ const Chekout = () => {
             </div>
             <div className='w-full flex justify-between'>
               <div className='w-[48%]'>
-                <h1>Landmard</h1>
+                <h1>Landmark</h1>
                 <input type="text" className='w-full p-[0.5rem]' value={Landmark} onChange={(e)=>{
                 SetLandmark(e.target.value)
               }}   required/>
@@ -187,7 +187,7 @@ const Chekout = () => {
       <div className='flex w-[25%]  pt-[2rem]'>
       <div className="cart-bill-main w-[80%] pt-[0rem] flex flex-col gap-[1rem]">
             <div className="price-summary-main gap-[0rem]">
-           <Link to="/cart" className='text-[2rem] font-semibold text-red-600 text-center ' >Edit Cart</Link>
+           <Link to="/cart" className='text-[2rem] font-semibold text-red-600 text-center ' >Edit Cart</Link> 
                 <div className="price-Summary gap-[1rem]">
                 <div className="total-price-div">
                     <h2>Total Item Price</h2>

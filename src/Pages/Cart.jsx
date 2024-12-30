@@ -113,7 +113,7 @@ const Cart = () => {
                 <h1>₹{Total}</h1>
                 </div>
                 {
-                User_id== "" ? <Link to="/login">Login Please</Link>: <button onClick={chekout}>Proceed to Checkout</button>
+                User_id== "" ? <Link className="cart-login-btn" to="/login">Login Please</Link>: <button onClick={chekout}>Proceed to Checkout</button>
                 }
             </div>
         </div>
