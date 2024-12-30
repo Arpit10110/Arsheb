@@ -22,3 +22,19 @@
     font-size: 2.5rem;
     font-weight: 400;
 }
+
+@media only screen and (width<=600px){
+    .sec5-allprods{
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .sec5-card{
+        width: 100%;
+    }
+    .sec5-card img {
+        width: 90%;
+    }
+    .sec5-card h2{
+        font-size: 3rem;
+    }
+}

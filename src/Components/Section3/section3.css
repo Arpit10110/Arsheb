@@ -34,3 +34,19 @@
     transition: all;
     cursor: pointer;
 }
+
+
+@media only screen and (width<=600px){
+    .sec3-head h2{
+        width: -webkit-fill-available;
+       }
+       .sec3-head{
+        flex-direction: column;
+        align-items: flex-start;
+       }
+       .sec3-imgdiv img {
+        width: 30%;
+    }
+    
+    
+}

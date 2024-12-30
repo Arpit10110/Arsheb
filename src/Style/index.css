@@ -20,3 +20,9 @@ body{
     font-family: "League Spartan", sans-serif;
     min-height: 100vh;
 }
+
+@media only screen and (width<=600px){
+    html{
+        font-size: 55%;
+    }
+}

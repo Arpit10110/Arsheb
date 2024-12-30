@@ -38,4 +38,7 @@
     .top-bannerImg {
         width: 45%;
     }
+    .top-banner{
+        height: 20vh;
+    }
 }

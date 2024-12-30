@@ -15,7 +15,7 @@ const Profile = () => {
         <div className='w-[45%]'>
          <ProfileOrder />
         </div>
-        <div className='w-[45%]'>
+        <div className='w-[45%] flex flex-col flex-wrap gap-[5rem]'>
             <ProfileDetails />
             <ProfileAddress />
         </div>

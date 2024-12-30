@@ -17,7 +17,7 @@ const ProfileOrder = () => {
     }
 
     useEffect(() => {
-    //  getorderdata()
+     getorderdata()
     }, [])
     
 

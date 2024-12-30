@@ -21,3 +21,14 @@
     font-weight: 500;
     font-size: 2rem;
 }
+
+@media only screen and (width<=600px){
+    .section2{
+        flex-wrap: wrap;
+        row-gap: 3rem;
+    }
+    .sec2box{
+        width: 40%;
+    }
+ 
+}
