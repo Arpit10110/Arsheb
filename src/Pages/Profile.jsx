@@ -11,11 +11,11 @@ const Profile = () => {
    <>
     <Navbar/>
     <TopBanner value={"Account"} />
-    <div className='my-[8rem] flex justify-around'>
-        <div className='w-[45%]'>
+    <div className='my-[8rem] flex justify-around below-sm:flex-col-reverse below-sm:gap-[4rem] below-sm:items-center'>
+        <div className='w-[45%] flex  below-sm:w-[95%] '>
          <ProfileOrder />
         </div>
-        <div className='w-[45%] flex flex-col flex-wrap gap-[5rem]'>
+        <div className='w-[45%] flex flex-col flex-wrap gap-[5rem] below-sm:w-[95%]'>
             <ProfileDetails />
             <ProfileAddress />
         </div>

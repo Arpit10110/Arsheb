@@ -25,3 +25,27 @@ nav{
 .nav-links a:hover{
     scale: 1.02;
 }
+.mobile-links{
+    display: none;
+}
+
+  
+@media only screen and (width<=600px) {
+    .nav-links{
+        display: none;
+    }
+    .mobile-links{
+        display: block;
+    }
+    .logo {
+        width: 30%;
+    }
+    .all-links{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        font-size: 2.5rem;
+        gap: 5rem;
+        padding-top: 10rem;
+    }
+}

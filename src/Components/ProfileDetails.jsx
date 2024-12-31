@@ -36,7 +36,7 @@ const ProfileDetails = () => {
 
   return (
     <>
-    <div className='border-[2px] rounded-[1rem] border-gray-700  w-full '>
+    <div className='border-[2px] rounded-[1rem] border-gray-700  w-full bg-gray-200 '>
         <div className='p-[0.5rem] border-b-[2px] border-gray-700 text-[2rem] font-semibold '>
             <h1>Personal Information</h1>
         </div>
@@ -61,7 +61,7 @@ const ProfileDetails = () => {
                       <h1>{Userdata.phone}</h1>
                     </div>
                     <div className='w-[45%] flex justify-center items-center'>
-                     <button onClick={logout} className='bg-blue-700 text-white w-full py-[0.5rem] rounded-[1rem] ' >LogOut</button>
+                     <button onClick={logout} className='bg-[#147aa9] text-white w-full py-[0.5rem] rounded-[1rem] ' >LogOut</button>
                     </div>
                   </div>
                 </div>

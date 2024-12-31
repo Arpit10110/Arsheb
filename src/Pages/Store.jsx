@@ -8,7 +8,7 @@ const Store = () => {
     <>
     <Navbar/>
         <div className='flex text-[2rem]  py-[1rem] border-[1px] border-black items-center justify-center  '>
-          <div className='w-[80%] flex justify-between  '>
+          <div className='w-[80%] flex justify-between below-sm:w-[95%] below-sm:flex-wrap below-sm:gap-[2rem] below-sm:justify-between  '>
               <Link to="/product/jewellery" className='hover:text-blue-600' >Jewellery</Link>
               <Link to="/product/mens"  className='hover:text-blue-600' >Men's</Link>
               <Link to="/product/womens" className='hover:text-blue-600'  >Women's</Link>

@@ -30,7 +30,7 @@ const StoreJewellery = () => {
     }
   return (
     <>
-        <div className='py-[5rem] flex flex-wrap justify-between gap-[4rem] w-[80%] m-auto'>
+        <div className='py-[5rem] flex flex-wrap justify-between gap-[4rem] w-[80%] m-auto below-sm:w-[100%] below-sm:justify-center '>
             {
                 demoapi.map((i,index)=>{
                     return(

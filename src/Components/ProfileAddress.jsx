@@ -30,7 +30,7 @@ const ProfileAddress = () => {
 
   return (
     <>
-    <div className='border-[2px] rounded-[1rem] border-gray-700  w-full '>
+    <div className='border-[2px] rounded-[1rem] border-gray-700  w-full bg-gray-200 '>
         <div className='p-[0.5rem] border-b-[2px] border-gray-700 text-[2rem] font-semibold '>
             <h1>Shipping Address</h1>
         </div>
@@ -42,7 +42,7 @@ const ProfileAddress = () => {
                   {
                     UserAdderss.map((i,index)=>{
                       return(
-                        <div className='w-[90%] bg-gray-300 rounded-[5px]  p-[1rem]' key={index}>
+                        <div className='w-[90%] bg-gray-300 rounded-[5px]  p-[1rem] cursor-pointer ' key={index}>
                           <h2 className='text-blue-800 font-semibold' >Address-{index+1}</h2>
                           <p>
                             {i.value}

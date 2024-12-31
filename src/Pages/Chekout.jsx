@@ -8,6 +8,7 @@ import axios from "axios"
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../Components/Footer/Footer';
 const Chekout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -70,9 +71,18 @@ const Chekout = () => {
     }
   }
 
+  const calorderdate = () => {
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.toLocaleString('default', { month: 'short' }); // Get short month name (e.g., "Oct")
+    const year = currentDate.getFullYear().toString().slice(-2); // Get last two digits of the year (e.g., "22")
+    return `${day} ${month}, ${year}`;
+  };
+
 
   const cahondelivery = async()=>{
     handleOpen();
+    const orderdate= calorderdate();
     const orderdata = {
       userid:User_id,
       cart:Cart,
@@ -80,7 +90,8 @@ const Chekout = () => {
       totalprice:TotalPrice,
       shipping:shippingFee,
       address:SavedAddress[SelectedAddress].value,
-      payment:"Cash on Delivery",
+      payment:"COD",
+      orderdate:orderdate
     }
     try {
       const {data} = await axios.post(`${import.meta.env.VITE_Port}/createorder`, orderdata);
@@ -95,6 +106,7 @@ const Chekout = () => {
       }
     } catch (error) {
       console.log(error);
+      handleClose();
     }
   }
 
@@ -115,9 +127,12 @@ const Chekout = () => {
       </Backdrop>
     <Navbar/>
     <TopBanner value={"Checkout"} />
-    <div className='flex justify-between' >
-      <div className='flex w-[65%] gap-x-[1rem] pt-[2rem] justify-between '>
-        <div className='flex flex-col w-[20%]  item-center gap-y-[2rem]  '> <button className=' text-[1.5rem] font-semibold bg-yellow-500   px-[0.5rem] py-[0.5rem]' onClick={()=>SetShowsaved(true)} >Saved Address</button><button  className=' text-[1.5rem] font-semibold bg-[#07142F] text-white  px-[0.5rem] py-[0.5rem]'  onClick={()=>SetShowsaved(false)}>New Address</button> </div>
+    <div className='flex justify-between below-sm:flex-col below-sm:gap-[3rem] below-sm:pb-[5rem] ' >
+      <div className='flex w-[65%] gap-x-[1rem] pt-[2rem] justify-between below-sm:w-full below-sm:justify-around '>
+        <div className='flex flex-col w-[20%]  item-center gap-y-[2rem]  text-[1.5rem]  below-sm:text-[1.2rem] '> 
+        <button className=' font-semibold bg-yellow-500   px-[0.5rem] py-[0.5rem]' onClick={()=>SetShowsaved(true)} >Saved Address</button>
+        <button  className='  font-semibold bg-[#07142F] text-white  px-[0.5rem] py-[0.5rem]'  onClick={()=>SetShowsaved(false)}>New Address</button>
+        </div>
         {
           showsaved ? 
           <div className='w-[75%]'>
@@ -145,7 +160,7 @@ const Chekout = () => {
               </div>
             }
           </div>:
-          <form onSubmit={addaddress} className='w-[75%] text-[1.5rem] flex flex-col gap-y-[1.5rem] font-semibold'>
+          <form onSubmit={addaddress} className='w-[75%] text-[1.5rem] flex flex-col gap-y-[1.5rem] font-semibold below-sm:w-[70%] '>
             <div className='w-full'>
               <h1>Address</h1>
               <input type="text" className='w-full p-[0.5rem]' value={Address} onChange={(e)=>{
@@ -184,7 +199,7 @@ const Chekout = () => {
           </form>
         }
       </div>
-      <div className='flex w-[25%]  pt-[2rem]'>
+      <div className='flex w-[25%]  pt-[2rem] below-sm:w-full below-sm:justify-center  '>
       <div className="cart-bill-main w-[80%] pt-[0rem] flex flex-col gap-[1rem]">
             <div className="price-summary-main gap-[0rem]">
            <Link to="/cart" className='text-[2rem] font-semibold text-red-600 text-center ' >Edit Cart</Link> 
@@ -210,6 +225,7 @@ const Chekout = () => {
         </div>
       </div>
     </div>
+    <Footer/>
    </>
   )
 }

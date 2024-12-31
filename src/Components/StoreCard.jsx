@@ -3,7 +3,7 @@ import React from 'react'
 const StoreCard = ({img,title,price,addtocart,id}) => {
   return (
    <>
-    <div className='flex flex-col w-[30%] border-black border-[1px] rounded-[5px] p-[1rem] gap-[1rem] bg-gray-200' >
+    <div className='flex flex-col w-[30%] border-black border-[1px] rounded-[5px] p-[1rem] gap-[1rem] bg-gray-200 below-sm:w-[80%] ' >
         <div className='w-full h-[35vh] ' >
             <img src={img} alt="title" className='h-[35vh] object-cover w-full border-black border-y-[1px] '/>
         </div>
