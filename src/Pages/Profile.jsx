@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 import TopBanner from '../Components/TopBanner/TopBanner'
 import ProfileOrder from '../Components/ProfileOrder.jsx'
 import ProfileDetails from '../Components/ProfileDetails.jsx'
 import ProfileAddress from '../Components/ProfileAddress.jsx'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Profile = () => {
+  const navigate = useNavigate();
+  const {User_id} = useSelector(state => state.arshebdeatil);
+  useEffect(() => {
+   if(User_id == ""){
+    navigate("/login")
+   }
+  }, [])
   return (
    <>
     <Navbar/>
