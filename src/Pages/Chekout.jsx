@@ -127,7 +127,7 @@ const Chekout = () => {
       </Backdrop>
     <Navbar/>
     <TopBanner value={"Checkout"} />
-    <div className='flex justify-between below-sm:flex-col below-sm:gap-[3rem] below-sm:pb-[5rem] ' >
+    <div className='flex justify-between below-sm:flex-col below-sm:gap-[3rem] below-sm:pb-[5rem] min-h-[60vh] ' >
       <div className='flex w-[65%] gap-x-[1rem] pt-[2rem] justify-between below-sm:w-full below-sm:justify-around '>
         <div className='flex flex-col w-[20%]  item-center gap-y-[2rem]  text-[1.5rem]  below-sm:text-[1.2rem] '> 
         <button className=' font-semibold bg-yellow-500   px-[0.5rem] py-[0.5rem]' onClick={()=>SetShowsaved(true)} >Saved Address</button>
