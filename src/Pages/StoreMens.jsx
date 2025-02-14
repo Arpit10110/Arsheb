@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import Loading from '../Components/Loading';
 import axios from "axios"
-const StoreJewellery = () => {
+const StoreMens = () => {
     const dispatch = useDispatch(); 
     const [Isloading,SetIsloadiing]= useState(true)
     const [StoreData,SetStoreData] = useState([]);
@@ -14,7 +14,7 @@ const StoreJewellery = () => {
 
     const getProduct = async()=>{
         try {
-            const {data} = await axios.get(`${import.meta.env.VITE_Port}/product/jewellery`)
+            const {data} = await axios.get(`${import.meta.env.VITE_Port}/product/mens`)
             SetStoreData(data.data);
             SetIsloadiing(false);
         } catch (error) {
@@ -22,7 +22,6 @@ const StoreJewellery = () => {
             SetIsloadiing(false);
         }
     }
-
 
     const addtocart = (item)=>{
         dispatch({
@@ -50,7 +49,8 @@ const StoreJewellery = () => {
 
      
     }, [])
-    
+
+
   return (
     <>
     <div>
@@ -81,8 +81,8 @@ const StoreJewellery = () => {
         pauseOnHover
         theme="colored"
         />
-    </>    
+   </>
   )
 }
 
-export default StoreJewellery
+export default StoreMens
