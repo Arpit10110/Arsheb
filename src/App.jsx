@@ -11,6 +11,7 @@ import StoreWomens from "./Pages/StoreWomens.jsx"
 import StoreHairAcces from "./Pages/StoreHairAcces.jsx"
 import StoreFootwear from "./Pages/StoreFootwear.jsx"
 import StoreBags from "./Pages/StoreBags.jsx"
+import ProductDetail from "./Pages/ProductDetail.jsx"
 import Cart from "./Pages/Cart.jsx"
 import Chekout from "./Pages/Chekout.jsx"
 import Orderplaced from "./Pages/Orderplaced.jsx"
@@ -34,6 +35,7 @@ const App = () => {
             <Route path='/product/footwears' element={<StoreFootwear/>} />
             <Route path='/product/bags' element={<StoreBags/>} />
           </Route>
+            <Route path='/productdetail/:id' element={<ProductDetail/>} />
           <Route path='/cart'   element={<Cart/>} />
           <Route path='/chekout'   element={<Chekout/>} />
           <Route path='/orderplaced'   element={<Orderplaced/>} />
