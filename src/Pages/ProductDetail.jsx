@@ -14,7 +14,7 @@ const ProductDetail = () => {
     const cuurentlocation = useParams();
     const [Isloading,SetIsloading] = useState(true);
     const [Productdetail,SetProductdetail] = useState();
-
+    const [Qty,SetQty] = useState(1);
 
     const getproductdetails = async(ProductId)=>{
         try {
@@ -37,7 +37,7 @@ const ProductDetail = () => {
             img:Productdetail.productimage[0].imageurl,
             title:Productdetail.producttitle,
             price:Productdetail.productprice,
-            qty:1,
+            qty:Qty,
         }
         dispatch({
             type:"addtocart",
@@ -100,6 +100,18 @@ const ProductDetail = () => {
                     <div>
                         <h2 className='text-[2.5rem] font-bold text-green-700 '>₹{Productdetail.productprice}</h2>
                         <h5 className='text-[1.2rem]' >MRP incl. of all taxes...</h5>
+                    </div>
+                    <div className='flex gap-[1rem] text-[3rem] cursor-default' >
+                       <h2>Quantity</h2>
+                       <div className='bg-gray-400 flex gap-[1rem] text-black rounded-[1rem] items-center justify-center'  >
+                       <h3 className='cursor-pointer  px-[1rem] text-center ' onClick={()=>{
+                        Qty>2?SetQty(Qty-1):SetQty(1)
+                       }} >-</h3>
+                       <h2>{Qty>1?Qty:"1"}</h2>
+                       <h3 className='cursor-pointer px-[1rem] text-center ' onClick={()=>{
+                        SetQty(Qty+1);
+                       }} >+</h3>
+                       </div>
                     </div>
 
                     <div className='flex justify-around mt-[2rem]' >
